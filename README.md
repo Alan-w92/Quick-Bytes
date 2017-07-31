@@ -1,5 +1,7 @@
 # README
 
+[![Coverage Status](https://coveralls.io/repos/github/Alan-w92/Quick-Bytes/badge.svg?branch=master)](https://coveralls.io/github/Alan-w92/Quick-Bytes?branch=master)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
