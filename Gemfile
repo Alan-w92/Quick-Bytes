@@ -9,6 +9,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'webpacker'
 gem 'devise'
+gem "http"
 
 group :development do
   gem 'listen', '~> 3.0.5'
