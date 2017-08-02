@@ -7,13 +7,4 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-import 'babel-polyfill';
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <h1>Boo Yaa</h1>,
-    document.getElementById('app')
-  );
-});
+import 'react/src/main.js'
