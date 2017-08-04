@@ -1,6 +1,6 @@
 source 'https://rubygems.org/'
 
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'rails', '~> 5.1.2'
