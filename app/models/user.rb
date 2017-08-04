@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
    validates :first_name, presence: true
    validates :last_name, presence: true
+
+   def self.search(search)
+     where("quantity LIKE ?", "%#{search}%" )
+   end
 end

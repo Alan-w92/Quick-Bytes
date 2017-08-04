@@ -12,4 +12,26 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
+#header {
+  margin-top: 2em;
+}
+
+#search {
+  margin-top: 4em;
+  text-align: center;
+}
+
+.nav-bar {
+  border: 1px solid green;
+  padding: 6px;
+  background-color: white;
+}
+
+body {
+  background: url('http://i.imgur.com/LzIbC7f.jpg') no-repeat center;
+  background-size: 100%;
+  background-attachment: fixed;
+}

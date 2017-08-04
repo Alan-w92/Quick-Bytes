@@ -1,5 +1,7 @@
 source 'https://rubygems.org/'
 
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'rails', '~> 5.1.2'
 gem 'pg', '~> 0.18'
@@ -9,6 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'webpacker'
 gem 'devise'
+gem 'http'
 
 group :development do
   gem 'listen', '~> 3.0.5'
