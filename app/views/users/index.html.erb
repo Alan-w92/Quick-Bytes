@@ -5,6 +5,8 @@
 
 <% if params[:search] %>
   <% search = params[:search].gsub(" ", "+") %>
+<% else %>
+  <% search = "" %>
 <% end %>
 
 <% json = HTTP.get("https://api.edamam.com/search?q=#{search}&app_id=#{ENV['API_ID']}&app_key=#{ENV['API_KEY']}") %>
@@ -22,7 +24,7 @@
 
 <br><br>
 <div id="list" class="row">
-  <div class="small-10 small-centered large-6 large-centered columns">
+  <div class="small-10 small-centered large-8 large-centered columns">
     <% recipe_list.each do |recipe|  %>
       <h2><%= recipe['recipe']['label'] %></h2>
       <img src="<%= recipe['recipe']['image'] %>" height="200" width="200"><br>
