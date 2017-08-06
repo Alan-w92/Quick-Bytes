@@ -31,7 +31,28 @@
 }
 
 body {
-  background: url('http://i.imgur.com/LzIbC7f.jpg') no-repeat center;
+  background: url('http://i.imgur.com/H52Iztj.jpg') no-repeat center;
   background-size: 100%;
   background-attachment: fixed;
+}
+
+h2:hover {
+  color: green;
+  text-decoration: underline;
+}
+
+.label:hover {
+  color: green;
+}
+
+.url a {
+  color: black;
+}
+
+.url a:hover {
+    color: green;
+}
+
+a {
+  color: #006400;
 }
