@@ -1,5 +1,7 @@
 <% require "http" %>
 <% require "json" %>
+<%= javascript_pack_tag 'application' %>
+
 
 <h1 id="header" class="text-center">Quick-Bytes</h1>
 
@@ -25,15 +27,22 @@
 <br><br>
 <div id="list" class="row">
   <div class="small-10 small-centered large-8 large-centered columns">
+    <% i = 0 %>
+    <% n = 10 %>
     <% recipe_list.each do |recipe|  %>
-      <h2><%= recipe['recipe']['label'] %></h2>
-      <img src="<%= recipe['recipe']['image'] %>" height="200" width="200"><br>
-      Servings: <%= recipe['recipe']['yield'].to_i %><br>
-      Calories: <%= recipe['recipe']['calories'].to_i %>
-      <h4>Ingredients:</h4>
-      <% recipe['recipe']['ingredientLines'].each do |ingred| %>
-        <%= ingred %><br>
-      <% end %>
+      <h2 id="<%= i %>" ><%= recipe['recipe']['label'] %></h2>
+      <img src="<%= recipe['recipe']['image'] %>" height="200" width="200"><br><br>
+      <% i += 1 %>
+      <div id="<%= n %>" class="option">
+        Servings: <%= recipe['recipe']['yield'].to_i %><br>
+        Calories: <%= recipe['recipe']['calories'].to_i %>
+        <% n += 1 %>
+        <h4>Ingredients:</h4>
+        <% recipe['recipe']['ingredientLines'].each do |ingred| %>
+          <%= ingred %><br>
+        <% end %>
+        <br>
+      </div>
     <% end %>
   </div>
 </div>
