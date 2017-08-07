@@ -83,3 +83,8 @@ h3:hover {
 a {
   color: black;
 }
+
+#delete {
+  margin-right: 25px;
+  margin-bottom: 20px;
+}

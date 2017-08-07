@@ -5,6 +5,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @comment = Comment.find(params[:id])
     @list = List.find(params[:id])
     @comments = @list.comments
   end
