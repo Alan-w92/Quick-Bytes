@@ -2,18 +2,7 @@
 <% require "json" %>
 <%= javascript_pack_tag 'application' %>
 
-
 <h1 id="header" class="text-center">Quick-Bytes</h1>
-
-<% if params[:search] %>
-  <% search = params[:search].gsub(" ", "+") %>
-<% else %>
-  <% search = "" %>
-<% end %>
-
-<% json = HTTP.get("https://api.edamam.com/search?q=#{search}&app_id=#{ENV['API_ID']}&app_key=#{ENV['API_KEY']}") %>
-<% recipes = JSON.parse(json) %>
-<% recipe_list = recipes['hits'] %>
 
 <div id="search box" class="row">
   <div class="small-10 small-centered large-6 large-centered text-center columns">
@@ -29,9 +18,9 @@
   <div class="small-10 small-centered large-8 large-centered columns">
     <% i = 0 %>
     <% n = 10 %>
-    <% recipe_list.each do |recipe|  %>
+    <% @recipe_list.each do |recipe|  %>
       <div title='Read me'>
-        <h2 id="<%= i %>" ><%= recipe['recipe']['label'] %></h2><br>
+        <h3 id="<%= i %>" ><%= recipe['recipe']['label'] %></h3>
       </div>
       <img src="<%= recipe['recipe']['image'] %>" height="200" width="200"><br><br>
       <% i += 1 %>

@@ -1,6 +1,12 @@
 class ListsController < ApplicationController
+
   def index
     @lists = List.all
+  end
+
+  def show
+    @list = List.find(params[:id])
+    @comments = @list.comments
   end
 
   def new
@@ -18,9 +24,19 @@ class ListsController < ApplicationController
     end
   end
 
+  def edit
+    @list = List.find(params[:id])
+  end
+
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy
+    redirect_to root_path, notice: 'List was successfully deleted.'
+  end
+
   private
 
   def list_params
-    params.require(:list).permit(:comment, :recipe_name, :ingredient, :user_id)
+    params.require(:list).permit(:recipe_name, :ingredient, :user_id)
   end
 end
