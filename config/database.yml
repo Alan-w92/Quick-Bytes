@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: quick-bytes_production
+  adapter: postgresql
+  database: db/production.sqlite3
   username: quick-bytes
   password: <%= ENV['QUICK-BYTES_DATABASE_PASSWORD'] %>
