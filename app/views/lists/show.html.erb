@@ -1,0 +1,15 @@
+<div class="text-center"><h1><%= @list.recipe_name %></h1></div><br>
+
+<div class="small-10 small-centered large-6 large-centered columns">
+
+  <h4>Ingredients:</h4>
+
+  <%= simple_format @list.ingredient %>
+
+  <br><br>
+  <h4>Comments:</h4>
+
+  <% @comments.each do |c| %>
+    <p><%= c.description %></p>
+  <% end %>
+</div>

@@ -11,6 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'devise'
 gem 'http'
+gem 'faker', git: "git://github.com/stympy/faker.git", branch: "master"
 
 group :development do
   gem 'listen', '~> 3.0.5'
@@ -33,3 +34,5 @@ group :production do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+ruby "2.3.3"

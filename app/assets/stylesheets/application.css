@@ -24,19 +24,13 @@
   text-align: center;
 }
 
-.nav-bar {
-  border: 1px solid green;
-  padding: 6px;
-  background-color: white;
-}
-
 body {
   background: url('http://i.imgur.com/H52Iztj.jpg') no-repeat center;
   background-size: 100%;
   background-attachment: fixed;
 }
 
-h2:hover {
+h3:hover {
   color: green;
   text-decoration: underline;
 }
@@ -53,6 +47,39 @@ h2:hover {
     color: green;
 }
 
-a {
+.nav-bar a {
   color: #006400;
+}
+
+#right-nav {
+  display: inline-block;
+  float: right;
+  margin-right: 25px;
+}
+
+#center-nav {
+  display: inline-block;
+  float:right;
+  color: #006400;
+  margin-right: 10px;
+}
+
+.nav-bar {
+  border: 1px solid green;
+  padding: 6px;
+  background-color: white;
+  padding-left: 15px;
+}
+
+#list a {
+  color: black;
+}
+
+#list a:hover {
+  color: green;
+  text-decoration: underline;
+}
+
+a {
+  color: black;
 }

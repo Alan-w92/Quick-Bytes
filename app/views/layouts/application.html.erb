@@ -14,35 +14,10 @@
       $(document).ready(function(){
         $(".option").hide();
 
-        $("#0").click(function(){
-          $("#10").slideToggle("slow");
-        });
-        $("#1").click(function(){
-          $("#11").slideToggle("slow");
-        });
-        $("#2").click(function(){
-          $("#12").slideToggle("slow");
-        });
-        $("#3").click(function(){
-          $("#13").slideToggle("slow");
-        });
-        $("#4").click(function(){
-          $("#14").slideToggle("slow");
-        });
-        $("#5").click(function(){
-          $("#15").slideToggle("slow");
-        });
-        $("#6").click(function(){
-          $("#16").slideToggle("slow");
-        });
-        $("#7").click(function(){
-          $("#17").slideToggle("slow");
-        });
-        $("#8").click(function(){
-          $("#18").slideToggle("slow");
-        });
-        $("#9").click(function(){
-          $("#19").slideToggle("slow");
+        $([10,11,12,13,14,15,16,17,18,19,]).each(function(i, e){
+          $(`#${i}`).click(function(){
+            $(`#${e}`).slideToggle("slow");
+          });
         });
       });
     </script>
@@ -58,8 +33,24 @@
         <%= link_to 'Sign In', new_user_session_path %>
       <% end %>
       /
-      <%= link_to 'Search', root_path %>
+      <%= link_to 'Search Recipes', root_path %>
+
+      <div id="center-nav">
+        <% if user_signed_in? %>
+          Welcome, <%= current_user.first_name  %>!
+        <% end %>
+      </div>
+
+      <div id="right-nav">
+        <% if user_signed_in? %>
+          <%= link_to 'My Lists', lists_path %>
+        <% end %>
+      </div>
+
     </div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 </html>
