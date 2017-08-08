@@ -1,33 +1,40 @@
-<div class="text-center"><h1><%= @list.recipe_name %></h1></div><br>
+<div id="recipe-show" class="small-10 small-centered large-6 large-centered columns">
+  <div class="text-center"><h1><%= @list.recipe_name %></h1></div><br>
 
-<div class="small-10 small-centered large-6 large-centered columns">
+  <div class="small-10 small-centered large-10 large-centered columns">
 
-  <h4>Ingredients:</h4>
+    <h4>Ingredients:</h4>
 
-  <div id="ingredients">
-    <%= simple_format @list.ingredient %>
+    <div id="ingredients">
+      <%= simple_format @list.ingredient %>
+    </div>
+
+    <br>
+    <h4>Comments:</h4>
+
+    <% @comments.each do |c| %>
+      <div id="comment">
+        <%= c.description %><br>
+        <%= link_to 'Edit', edit_list_comment_path(@list, c) %> |
+        <%= link_to 'Delete', list_comment_path(@list, c), method: :delete, data: { confirm: 'Delete this comment?' } %>
+      </div>
+      <br>
+    <% end %>
+
+    <br>
+    <div id="group-buttons">
+      <%= link_to 'Back to Recipe Lists', lists_path %>
+    </div>
+    <div id="group-buttons">
+      <%= link_to 'Edit Recipe List', edit_list_path(@list) %>
+    </div>
+    <div id="group-buttons">
+      <%= link_to 'Add comment', new_list_comment_path(@list) %>
+    </div>
   </div>
 
-  <br>
-  <h4>Comments:</h4>
-
-  <% @comments.each do |c| %>
-    <div id="comment">
-      <%= c.description %><br>
-      <%= link_to 'Edit', edit_list_comment_path(@list, c) %> |
-      <%= link_to 'Delete', list_comment_path(@list, c), method: :delete, data: { confirm: 'Delete this comment?' } %>
-    </div>
-    <br>
-  <% end %>
-
-  <br>
-  <%= link_to 'Back to Recipe Lists', lists_path %> |
-  <%= link_to 'Edit Recipe List', edit_list_path(@list) %> |
-  <%= link_to 'Add comment', new_list_comment_path(@list) %>
-
-</div>
-
-<br><br><br>
-<div id="delete" class="small-10 small-centered large-6 large-centered columns text-right">
-  <%= link_to 'Delete Recipe List', @list, method: :delete, data: { confirm: 'Are you sure you want to delete this list?' } %>
+  <br><br><br>
+  <div id="delete" class="small-10 small-centered large-10 large-centered columns text-right">
+    <%= link_to 'Delete Recipe List', @list, method: :delete, data: { confirm: 'Are you sure you want to delete this list?' } %>
+  </div>
 </div>
