@@ -1,7 +1,9 @@
-<div class="small-8 small-centered large-4 large-centered columns">
-  <h2>Edit comment</h2>
+<div class="small-8 small-centered large-4 large-centered columns">                  
+  <h2>Edit Comment</h2>
 
   <%= render 'form', list: @list %><br>
 
-  <%= link_to 'Back', @list %>
+  <%= link_to 'Back to Recipe', @list %> |
+  <%= link_to 'Back to Recipe Lists', lists_path %>
 </div>
+
