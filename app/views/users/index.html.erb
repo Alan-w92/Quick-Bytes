@@ -14,7 +14,7 @@
 </div>
 
 <br><br>
-<div id="list" class="row">
+<div class="row">
   <div class="small-10 small-centered large-8 large-centered columns">
     <% i = 0 %>
     <% n = 10 %>
@@ -35,6 +35,8 @@
         <% recipe['recipe']['ingredientLines'].each do |ingred| %>
           <%= ingred %><br>
         <% end %>
+        <br><br>
+        <%= link_to 'Create recipe list ', new_list_path(:title => recipe['recipe']['label'], :ingredients => recipe['recipe']['ingredientLines']) %>
         <br>
       </div>
     <% end %>

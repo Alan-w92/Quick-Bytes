@@ -75,6 +75,10 @@ h3:hover {
   background-color: white;
   padding-left: 15px;
 }
+input {
+  background-color: #B0C4DE;
+  color: blue;
+}
 
 #list a {
   color: black;
@@ -113,4 +117,8 @@ a {
   padding-left: 5px;
   padding-right: 5px;
   margin-left: 5px;
+}
+
+h1 {
+  color: #2A3A67
 }
