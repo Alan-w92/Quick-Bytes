@@ -85,6 +85,11 @@ a {
 }
 
 #delete {
-  margin-right: 25px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+#ingredients, #comment {
+  border: 1px solid green;
+  padding: 5px;
+  background-color: #F0FFFF;
 }

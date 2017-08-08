@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'users#index'
 
   resources :users, only: [:index]
-  resources :lists
-  resources :comments
+  resources :lists do
+    resources :comments
+  end
 end

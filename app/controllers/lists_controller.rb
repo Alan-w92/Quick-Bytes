@@ -5,7 +5,6 @@ class ListsController < ApplicationController
   end
 
   def show
-    @comment = Comment.find(params[:id])
     @list = List.find(params[:id])
     @comments = @list.comments
   end
@@ -27,6 +26,15 @@ class ListsController < ApplicationController
 
   def edit
     @list = List.find(params[:id])
+  end
+
+  def update
+    @list = List.find(params[:id])
+    if @list.update(list_params)
+      redirect_to @list, notice: 'List was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
