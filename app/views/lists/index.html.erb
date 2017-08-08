@@ -1,12 +1,16 @@
-<div class="text-center"><h1>My Recipe Lists</h1></div>
+<div id="list-show" class="small-10 small-centered large-6 large-centered columns">
+  <div class="text-center"><h1>My Recipe Lists</h1></div><br>
 
-<div id="list" class="small-10 small-centered large-6 large-centered columns">
-  <% @lists.each do |list| %>
-    <% if user_signed_in? && (list.user == current_user)%>
-      <%= link_to "#{list.recipe_name}", list_path(list) %><br>
+  <div id="list" class="small-10 small-centered large-6 large-centered columns">
+    <% @lists.each do |list| %>
+      <% if user_signed_in? && (list.user == current_user)%>
+        <%= link_to "#{list.recipe_name}", list_path(list) %><br>
+      <% end %>
     <% end %>
-  <% end %>
 
-<br><br>
-<%= link_to 'Add new list ', new_list_path %>
+    <br><br>
+  </div>
+    <div id="group-buttons" class="links">
+      <%= link_to 'Add new list ', new_list_path %>
+    </div>
 </div>
