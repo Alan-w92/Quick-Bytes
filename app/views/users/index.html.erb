@@ -36,7 +36,9 @@
           <%= ingred %><br>
         <% end %>
         <br><br>
-        <%= link_to 'Create recipe list ', new_list_path(:title => recipe['recipe']['label'], :ingredients => recipe['recipe']['ingredientLines']) %>
+        <% if user_signed_in? %>
+          <%= link_to 'Create recipe list ', new_list_path(:title => recipe['recipe']['label'], :ingredients => recipe['recipe']['ingredientLines']) %>
+        <% end %>
         <br>
       </div>
     <% end %>
