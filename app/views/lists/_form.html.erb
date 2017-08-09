@@ -1,9 +1,10 @@
-<% @ingred = '' %>
+<% @ingredient = '' %>
 <% if params[:ingredients] %>
   <% params[:ingredients].each do |i| %>
-    <% @ingred += '<div>'+ i + '</div>' %>
+    <% @ingredient += i + "    " %>
   <% end %>
 <% end %>
+<% @ingred = @ingredient.gsub("    ", "\r\n") %>
 
 <%= form_for(@list) do |f| %>
   <% if list.errors.any? %>
