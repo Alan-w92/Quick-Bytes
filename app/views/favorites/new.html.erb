@@ -1,0 +1,38 @@
+<% @element = '' %>
+<% if params[:element] %>
+  <% params[:element].each do |i| %>
+    <% @element += i + "    " %>
+  <% end %>
+<% end %>
+<% @ele = @element.gsub("    ", "\r\n") %>
+<br><br><br><br><br><br>
+
+<div id="favoriteform" class="small-8 small-centered large-4 large-centered columns">
+  <%= form_for(@favorite, :html => {:id => "favoriteform" }) do |f| %>
+
+    <div class="field">
+      <%= f.hidden_field :title, :value => params[:recipe] %>
+
+      <%= f.hidden_field :image, :value => params[:image] %>
+
+      <%= f.hidden_field :serving, :value => params[:serving].to_i %>
+
+      <%= f.hidden_field :calorie, :value => params[:calorie].to_i %>
+
+      <%= f.hidden_field :url, :value => params[:url] %>
+
+      <%= f.hidden_field :element, :value => @ele %>
+
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+
+      <div class="actions">
+        <%= f.submit "Save recipe"%>
+      </div>
+
+      <div id="backtosearch">
+        <%= button_to 'Back to search', users_path %>
+      </div>
+    </div>
+
+  <% end %>
+</div>

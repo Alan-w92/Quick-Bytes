@@ -8,17 +8,27 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
+      $(document).ready(function(){
+           $("#favoriteform").submit();
+      });
+    </script>
 
+    <script>
       $(document).ready(function(){
         $(".option").hide();
 
-        $([10,11,12,13,14,15,16,17,18,19,]).each(function(i, e){
+        $([10,11,12,13,14,15,16,17,18,19]).each(function(i, e){
           $(`#${i}`).click(function(){
             $(`#${e}`).slideToggle("slow");
           });
         });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function(){
+        $("#favoriteform").submit();
       });
     </script>
   </head>
@@ -38,6 +48,9 @@
       <div id="right-nav">
         <% if user_signed_in? %>
           <%= link_to 'My Lists', lists_path %>
+          <div id="favorites">
+            <%= link_to 'Favorites', favorites_path %>
+          </div>
           <div id="account">
             <%= link_to 'My Account', edit_user_registration_path %>
           </div>
@@ -51,8 +64,8 @@
       </div>
 
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="notice"><%= notice %></div>
+    <div class="alert"><%= alert %></div>
 
     <%= yield %>
   </body>

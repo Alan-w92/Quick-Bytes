@@ -31,7 +31,7 @@ class ListsController < ApplicationController
   def update
     @list = List.find(params[:id])
     if @list.update(list_params)
-      redirect_to @list, notice: 'List was successfully updated.'
+      redirect_to @list, notice: 'List was successfully updated'
     else
       render :edit
     end
@@ -40,7 +40,7 @@ class ListsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
     @list.destroy
-    redirect_to lists_path, notice: 'List was successfully deleted.'
+    redirect_to lists_path, notice: 'List was successfully deleted'
   end
 
   private

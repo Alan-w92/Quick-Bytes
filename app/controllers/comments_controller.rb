@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @list = @comment.list
     if @comment.update(comment_params)
-      redirect_to @list, notice: 'Comment was successfully updated.'
+      redirect_to @list, notice: 'Comment was successfully updated'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @list = @comment.list
     @comment.destroy
-    redirect_to lists_path, notice: 'Comment was successfully deleted.'
+    redirect_to lists_path, notice: 'Comment was successfully deleted'
   end
 
   private
