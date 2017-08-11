@@ -23,13 +23,10 @@
     <%= f.label :recipe_name, 'Recipe Name' %>
     <%= f.text_field :recipe_name, :value => params[:title] %>
 
-    <% params[:ingredients] %>
-    <% ingred = params[:ingredients] %>
-
     <%= f.label :ingredient, 'Ingredients' %>
     <%= f.text_area :ingredient, :rows => 8, :value => @ingred %>
 
-    <%= f.hidden_field :user_id, :value=>current_user.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
 
   <div class="actions">

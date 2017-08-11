@@ -37,7 +37,20 @@
         <% end %>
         <br><br>
         <% if user_signed_in? %>
-          <%= link_to 'Create recipe list ', new_list_path(:title => recipe['recipe']['label'], :ingredients => recipe['recipe']['ingredientLines']) %>
+          <%= link_to 'Create recipe list ', new_list_path(
+          :title => recipe['recipe']['label'],
+          :ingredients => recipe['recipe']['ingredientLines']
+          ) %>
+
+          <%= link_to 'Favorite', new_favorite_path(
+          :recipe => recipe['recipe']['label'],
+          :element => recipe['recipe']['ingredientLines'],
+          :image => recipe['recipe']['image'],
+          :serving => recipe['recipe']['yield'],
+          :calorie => recipe['recipe']['calories'],
+          :url => recipe['recipe']['url'],
+          ) %>
+
         <% end %>
         <br>
       </div>
