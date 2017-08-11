@@ -136,7 +136,7 @@ h1 {
   margin-right: 15px;
 }
 
-#backtosearch, #createrecipe {
+#favoriterecipe, #backtosearch, #createrecipe {
   display: inline-block;
 }
 
