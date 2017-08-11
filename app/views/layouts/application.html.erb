@@ -10,6 +10,12 @@
 
     <script>
       $(document).ready(function(){
+           $("#favoriteform").submit();
+      });
+    </script>
+
+    <script>
+      $(document).ready(function(){
         $(".option").hide();
 
         $([10,11,12,13,14,15,16,17,18,19]).each(function(i, e){
@@ -42,6 +48,9 @@
       <div id="right-nav">
         <% if user_signed_in? %>
           <%= link_to 'My Lists', lists_path %>
+          <div id="favorites">
+            <%= link_to 'Favorites', favorites_path %>
+          </div>
           <div id="account">
             <%= link_to 'My Account', edit_user_registration_path %>
           </div>
@@ -55,8 +64,8 @@
       </div>
 
     </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="notice"><%= notice %></div>
+    <div class="alert"><%= alert %></div>
 
     <%= yield %>
   </body>

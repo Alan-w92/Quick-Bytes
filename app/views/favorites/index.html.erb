@@ -1,15 +1,15 @@
-<div id="list-show" class="small-10 small-centered large-6 large-centered columns">
+<div id="list-show" class="small-10 small-centered large-8 large-centered columns">
   <div class="text-center"><h1>Favorite recipes</h1></div><br>
 
-  <div id="list" class="small-10 small-centered large-8 large-centered columns">
+  <div id="list" class="small-10 small-centered large-10 large-centered columns">
+    <% i = 0 %>
+    <% n = 10 %>
     <% @favorites.each do |recipe| %>
       <% if user_signed_in? && (recipe.user == current_user)%>
-        <% i = 0 %>
-        <% n = 10 %>
         <div title='Read me'>
           <h3 id="<%= i %>" ><%= recipe.title %></h3>
         </div>
-        <img src="<%= recipe.image %>" height="200" width="200"><br><br>
+        <img id="searchimage" src="<%= recipe.image %>" height="200" width="200"><br><br>
         <% i += 1 %>
         <div id="<%= n %>" class="option">
           Servings: <%= recipe.serving %><br>
@@ -19,14 +19,17 @@
             See cooking directions: <%= link_to recipe.title, recipe.url, target: :_blank %>
           </div>
           <h4>Ingredients:</h4>
-          <% recipe.element.each do |ingred| %>
+          <% recipe_ingred = recipe.element.split /[\r\n]+/%>
+          <% recipe_ingred.each do |ingred| %>
             <%= ingred %><br>
           <% end %>
           <br><br>
+          <div id="delete">
+            <%= link_to 'Remove Recipe', recipe, method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' } %>
+          </div>
         </div>
       <% end %>
     <% end %>
-
     <br><br>
   </div>
 </div>
