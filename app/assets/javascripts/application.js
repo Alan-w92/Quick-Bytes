@@ -17,3 +17,13 @@
 //= require foundation
 
 $(function(){ $(document).foundation(); });
+
+$(document).ready(function(){
+  $(".option").hide();
+
+  $([10,11,12,13,14,15,16,17,18,19]).each(function(i, e){
+    $(`#${i}`).click(function(){
+      $(`#${e}`).slideToggle("slow");
+    });
+  });
+});
