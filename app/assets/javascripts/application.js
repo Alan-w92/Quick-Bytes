@@ -18,7 +18,6 @@
 
 $(function(){ $(document).foundation(); });
 
-
 $(document).ready(function(){
   $(".option").hide();
 
