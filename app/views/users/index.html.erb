@@ -37,16 +37,6 @@
         <% end %>
         <br><br>
         <% if user_signed_in? %>
-          <div id="favorite">
-            <%= link_to image_tag("https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/keditbookmarks.png", size: "16x16") + "Favorite", new_favorite_path(
-            :recipe => recipe['recipe']['label'],
-            :element => recipe['recipe']['ingredientLines'],
-            :image => recipe['recipe']['image'],
-            :serving => recipe['recipe']['yield'],
-            :calorie => recipe['recipe']['calories'],
-            :url => recipe['recipe']['url'],
-            ) %>
-          </div>
 
           <div id="createrecipe">
             <%= link_to 'Create recipe list ', new_list_path(
@@ -54,6 +44,42 @@
             :ingredients => recipe['recipe']['ingredientLines']
             ) %>
           </div>
+
+          <div id="favoriteform" >
+            <% @element = '' %>
+            <% if recipe['recipe']['ingredientLines'] %>
+              <% recipe['recipe']['ingredientLines'].each do |i| %>
+                <% @element += i + "    " %>
+              <% end %>
+            <% end %>
+            <% @ele = @element.gsub("    ", "\r\n") %>
+
+            <%= form_for(@favorite, :html => {:id => "favoriteform" }) do |f| %>
+
+              <div class="field">
+                <%= f.hidden_field :title, :value => recipe['recipe']['label'] %>
+
+                <%= f.hidden_field :image, :value => recipe['recipe']['image'] %>
+
+                <%= f.hidden_field :serving, :value => recipe['recipe']['yield'].to_i %>
+
+                <%= f.hidden_field :calorie, :value => recipe['recipe']['calories'].to_i %>
+
+                <%= f.hidden_field :url, :value => recipe['recipe']['url'] %>
+
+                <%= f.hidden_field :element, :value => @ele %>
+                <%= f.hidden_field :user_id, :value => current_user.id %>
+
+                <div id="favoriterecipe" class="actions">
+                  <%= image_tag("https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/keditbookmarks.png", size: "16x16") %>
+                  <%= f.submit "Favorite"%>
+                </div>
+
+              </div>
+
+            <% end %>
+          </div>
+
         <% end %>
         <br>
       </div>
