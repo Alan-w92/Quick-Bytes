@@ -8,6 +8,7 @@ Quick-Bytes is an application that allows users to search food recipes from the 
 
 Quick-Bytes was built to relieve the stress of stumbling around to prepare your next meal. Quick-Bytes allows easy access to over one million recipes so you can find what you want to make. Ingredients and cooking directions are at your fingertips to ease the process of making your next home made meal. Save your favorite recipes to a list and plan ahead to make sure that a healthy meal is always within reach.
 
+https://quick-bytes.herokuapp.com
 
 # Local Setup
 
