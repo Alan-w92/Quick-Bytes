@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
-    @list = List.find(params[:list_id])
+    @list = list_params
   end
 
   def create
     @comment = Comment.new(comment_params)
-    @list = List.find(params[:list_id])
+    @list = list_params
 
     if @comment.save
       flash[:alert] = "Comment added successfully"
@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @list = List.find(params[:list_id])
+    @list = list_params
     @comment = Comment.find(params[:id])
   end
 
@@ -43,5 +43,9 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:description).merge(list: List.find(params[:list_id]))
+  end
+
+  def list_params
+    List.find(params[:list_id])
   end
 end
