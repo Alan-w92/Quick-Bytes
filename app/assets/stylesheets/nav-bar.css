@@ -1,0 +1,26 @@
+.nav-bar a {
+  color: #006400;
+}
+
+#right-nav {
+  float: right;
+  margin-right: 10px;
+}
+
+#center-nav {
+  float:right;
+  color: #006400;
+  margin-right: 25px;
+}
+
+#favorites, #account {
+  display: inline-block;
+  margin-left: 15px
+}
+
+.nav-bar {
+  border: 1px solid green;
+  padding: 6px;
+  background-color: white;
+  padding-left: 15px;
+}
