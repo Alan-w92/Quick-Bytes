@@ -26,6 +26,8 @@
       <% end %>
       /
       <%= link_to 'Search Recipes', root_path %>
+      /
+      <%= link_to 'Google Map', maps_path %>
 
       <div id="right-nav">
         <% if user_signed_in? %>
@@ -48,6 +50,10 @@
     </div>
     <div class="notice"><%= notice %></div>
     <div class="alert"><%= alert %></div>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCDI2rLj-myQjGe6zc5eXShgtAOlzMbKU&callback=initMap">
+    </script>
 
     <%= yield %>
   </body>
