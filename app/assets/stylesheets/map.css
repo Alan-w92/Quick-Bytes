@@ -2,6 +2,7 @@
   height: 80%;
   width: 70%;
   margin-left: 15%;
+  margin-bottom: 50px;
 }
 
 #description {
@@ -74,4 +75,8 @@
 
 #target {
   width: 345px;
+}
+
+#suggestions {
+  margin-left: 32%;
 }
