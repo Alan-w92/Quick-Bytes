@@ -38,6 +38,8 @@ Testing:
  from the search results
 -Logged in users can edit and delete the their lists and add comments to existing lists
 -Users may edit their account information at any time or remove their account
+-Users have access to the google map API for a map of their surrounding area
+-Users may search the google map for nearby stores of their choosing 
 ```
 
 # Technologies
@@ -45,19 +47,22 @@ Testing:
 -Ruby on Rails
  All view pages are built with rails MVC framework
  Rails forms provide edit and delete functionality to any existing data
-```
-```
+
 -PostgreSQL and Activerecord
  All models and data are save with this database
  User input is validated before being stored
-```
-```
+
 -Devise
  Devise used for user authentication and authorization
-```
-```
+
 -Jquery
  Used to provide HTML manipulation
+ 
+-Edamam API
+ Provides recipe data in the form of JSON
+ 
+-Google Map API
+ Provides access to live google maps and the ability to search for related areas
 ```
 -Testing
 ```
