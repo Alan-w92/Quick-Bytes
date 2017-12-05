@@ -58,15 +58,10 @@
 
               <div class="field">
                 <%= f.hidden_field :title, :value => recipe['recipe']['label'] %>
-
                 <%= f.hidden_field :image, :value => recipe['recipe']['image'] %>
-
                 <%= f.hidden_field :serving, :value => recipe['recipe']['yield'].to_i %>
-
                 <%= f.hidden_field :calorie, :value => recipe['recipe']['calories'].to_i %>
-
                 <%= f.hidden_field :url, :value => recipe['recipe']['url'] %>
-
                 <%= f.hidden_field :element, :value => @ele %>
                 <%= f.hidden_field :user_id, :value => current_user.id %>
 
@@ -74,9 +69,7 @@
                   <%= image_tag("https://cdn2.iconfinder.com/data/icons/crystalproject/crystal_project_256x256/apps/keditbookmarks.png", size: "16x16") %>
                   <%= f.submit "Favorite"%>
                 </div>
-
               </div>
-
             <% end %>
           </div>
 

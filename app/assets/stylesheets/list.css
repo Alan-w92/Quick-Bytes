@@ -7,6 +7,10 @@
   text-decoration: underline;
 }
 
+#list {
+  margin-bottom: 100px;
+}
+
 #delete {
   margin-bottom: 30px;
 }
@@ -23,12 +27,11 @@
   background-color: #F0F8FF;
 }
 
-#group-buttons {
+#back-buttons, #edit-buttons, #add-buttons {
   display: inline-block;
   color: white;
   border-radius: 15px;
   background-color: #AFEEEE;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
